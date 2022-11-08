@@ -10,8 +10,6 @@ import HeaderSection from '../components/Header/HeaderSection'
 import Expertise from '../components/Home/Expertise/Expertise'
 import Skills from '../components/Home/Skills/Skills'
 
-// const api = 'https://cv.vini.digital/api';
-
 export default function Home() {
 
   const [about, setAbout] = useState();
@@ -45,11 +43,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
 
         <meta property="og:locale" content="pt_BR" />
-        <meta property="og:url" content="https://cv.vini.digital" />
+        <meta property="og:url" content="https://gdantasit.com" />
         <meta property="og:title" content="Guilherme Dantas - Desenvolvedor web, Frontend" />
         <meta property="og:site_name" content="Dantas IT" />
         <meta property="og:description" content="Currículum Vitae" />
-        <meta property="og:image" content="https://cv.vini.digital/images/share.png" /> {/* Alterar isso dps de saber o nome do site*/}
+        <meta property="og:image" content="https://gdantasit.com/images/share.png" /> {/* Alterar isso dps de saber o nome do site*/}
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -61,7 +59,7 @@ export default function Home() {
 
         <div className={`${styles.col} ${styles.col1}`}>
           <picture>
-            <Image src="/images/avatar.jpeg" alt="Foto Vinícius" width={540} height={400} />
+            <Image src="/images/avatar.jpeg" alt="Foto Guilherme" width={540} height={400} />
           </picture>
         </div>
 
@@ -80,7 +78,7 @@ export default function Home() {
 
           <div className={styles.contentBody}>
             <h1>Guilherme Dantas</h1>
-            <h2>Desenvolvedor web<span> frontend </span></h2>
+            <h2>Desenvolvedor Web<span> Frontend </span></h2>
             <button>
               <a href='/pdf/cv.pdf' target="blanc">Baixe meu Currículo</a>
             </button>
@@ -117,7 +115,7 @@ export default function Home() {
                   <small>Web</small>
                 </div>
                 <div>
-                  <Link href="https://dantas-it.digital">dantas-it.digital</Link>
+                  <Link href="https://dantas-it.digital">gdantasit.com</Link>
                 </div>
               </li>
               <li className={styles.email}>

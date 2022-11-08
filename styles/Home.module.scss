@@ -321,6 +321,8 @@
               a{
                 @media(max-width: $screen-sm){
                   font-size: .8rem;
+                  max-width: 132px;
+                  overflow: scroll;
                 }
               }
             }
