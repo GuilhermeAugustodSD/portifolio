@@ -42,12 +42,13 @@ export default function Home() {
         <meta name="author" content="Guilherme Dantas" />
         <link rel="icon" href="/favicon.ico" />
 
+        <meta property="fb:app_id" content="1306835976749394" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://gdantasit.com" />
         <meta property="og:title" content="Guilherme Dantas - Desenvolvedor web, Frontend" />
         <meta property="og:site_name" content="Dantas IT" />
         <meta property="og:description" content="Currículum Vitae" />
-        <meta property="og:image" content="https://gdantasit.com/images/share.png" /> {/* Alterar isso dps de saber o nome do site*/}
+        <meta property="og:image" content="https://gdantasit.com/images/share.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

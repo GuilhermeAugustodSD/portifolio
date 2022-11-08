@@ -38,10 +38,10 @@ function MyApp({ Component, pageProps }) {
           }
         `}</style>
         <Component {...pageProps} />
-        <Analytics 
+        {/* <Analytics 
           id="gtag-cvViniDigital"
           trakingID="G-ZK3PFQGFJ0"
-        />
+        /> */}
       </Hydrate>
     </QueryClientProvider>
   )
