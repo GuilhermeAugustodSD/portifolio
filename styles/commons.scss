@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  position: relative;
+  height: fit-content;
+
+  @media (max-width: $screen-lg) {
+    max-width: 1320px;
+    padding: 0 14px;
+  }
+
+  @media (max-width: $screen-sl) {
+   //width: 1000px; 
+   width: 100%;
+   padding: 0 60px;
+  }
+
+  @media (max-width: $screen-ml) {
+    width: 100%;
+    padding: 0;
+  }
+
+  @media (max-width: $screen-md) {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  @media (max-width: $screen-sm) {
+    max-width: 728px;
+    padding: 0 20px;
+    width: 100%;
+  }
+  
+  @media (max-width: $screen-xs) {
+    padding: 0 16px;
+    max-width: 600px;
+  }
+
+  @media(max-width: 360px){
+    padding: 0 12px;
+  }
+
+  @media (max-width: $screen-xxs) {
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../../styles/variables.scss';
+
+.media{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding: 0;
+  margin: 0;
+
+  @media(max-width: $screen-sm){
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-left: 20px;
+  }
+
+  li{
+    padding-left: 8px;
+
+
+    &::marker{
+      content: '->';
+      color: $purpe-100;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
+    h3{
+      line-height: 1;
+
+      &:before{
+        content: '<';
+        // font-size: 1.rem;
+        line-height: 1;
+      }
+
+      &:after{
+        content: ' />';
+        // font-size: 1.8rem;
+        line-height: 1;
+      }
+    }
+  }
+
+}
