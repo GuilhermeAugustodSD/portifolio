@@ -116,7 +116,7 @@ export default function Home() {
                   <small>Web</small>
                 </div>
                 <div>
-                  <Link href="https://dantas-it.digital">gdantasit.com</Link>
+                  <Link href="https://www.dantasit.digital">gdantasit.com</Link>
                 </div>
               </li>
               <li className={styles.email}>
