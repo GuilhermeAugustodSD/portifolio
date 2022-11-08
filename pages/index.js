@@ -44,7 +44,7 @@ export default function Home() {
 
         <meta property="fb:app_id" content="1306835976749394" />
         <meta property="og:locale" content="pt_BR" />
-        <meta property="og:url" content="https://gdantasit.com" />
+        <meta property="og:url" content="https://www.gdantasit.com" />
         <meta property="og:title" content="Guilherme Dantas - Desenvolvedor web, Frontend" />
         <meta property="og:site_name" content="Dantas IT" />
         <meta property="og:description" content="Currículum Vitae" />
