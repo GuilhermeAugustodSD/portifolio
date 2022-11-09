@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 
 import HeaderSection from '../components/Header/HeaderSection'
 import Expertise from '../components/Home/Expertise/Expertise'
+import Experience from '../components/Home/Experience/Experience'
 import Skills from '../components/Home/Skills/Skills'
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
   const [about, setAbout] = useState();
   const [expertise, setExpertise] = useState();
   const [skills, setSkills] = useState();
-
+  const [experience, setExperience] = useState();
   useEffect(() => {
     fetch(`/api/about`)
       .then((response) => response.json())
@@ -28,6 +29,7 @@ export default function Home() {
       .then((response) => {
         setExpertise(response.expertise);
         setSkills(response.skills);
+        setExperience(response.experience);
       });
 
   }, []);
@@ -162,7 +164,7 @@ export default function Home() {
 
         <section id="expertise">
           <HeaderSection 
-            title="Experiência"
+            title="Expertise"
             desc="Ainda faltam muitas linhas de código"
             classTemplate={`${styles.col}`}
           />
@@ -183,6 +185,19 @@ export default function Home() {
           <Skills 
             classTemplate={`${styles.col}`}
             data={skills}
+          />
+        </section>
+
+        <section id="expirience">
+          <HeaderSection 
+            title="Experiência e Formação"
+            desc="Lugares por onde passei, atuei e aprendi."
+            classTemplate={`${styles.col}`}
+          />
+
+          <Experience 
+            classTemplate={`${styles.col}`}
+            data={experience}
           />
         </section>
 

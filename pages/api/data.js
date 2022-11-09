@@ -1,24 +1,55 @@
 export default function handler(req, res) {
   res.status(200).json({
     experience: [
-      // {
-      //   "type": "certified",
-      //   "dateStart": "2019",
-      //   "dateEnd": "2022",
-      //   "institution": "Fundamentos do Gerenciador de tags do Google",
-      //   "role": "Google Academy",
-      //   "locate": "Brasília, DF",
-      //   "description": "Gerenciador de tags do Google pode simplificar a implementação de tags e o processo de gerenciamento para profissionais de marketing, analistas e desenvolvedores.",
-      //   "link": "https://analytics.google.com/analytics/academy/certificate/f01blr-RTG-wofBAlg7ePA"
-      // },
       {
-        "type": "study",
-        "dateStart": "2018",
-        "dateEnd": "2022",
-        "institution": "Centro Universitário de Brasília",
-        "role": "Udacity",
+        "type": "project",
+        "dateStart": "2022",
+        "dateEnd": "Nov",
+        "institution": "Escolha a Escola",
+        "role": "Guia de escolas",
         "locate": "Brasília, DF",
-        "description": "Bacharelado em Ciência da Computação"
+        "description": "Guia de escolas do DF utilizando Next.JS, Laravel e AWS",
+        "link": "https://escolhaaescola.correiobraziliense.com.br"
+      },
+      {
+        "type": "project",
+        "dateStart": "2022",
+        "dateEnd": "Out",
+        "institution": "Eleições 2022",
+        "role": "Cobertura das eleições",
+        "locate": "Brasília, DF",
+        "description": "Guia de EleiçÕes do DF utilizando Next.JS, Laravel e AWS",
+        "link": "https://eleicoes.correiobraziliense.com.br"
+      },
+      {
+        "type": "project",
+        "dateStart": "2022",
+        "dateEnd": "Out",
+        "institution": "Correio Braziliense",
+        "role": "Capa do Correio Braziliense",
+        "locate": "Brasília, DF",
+        "description": "Capa do Correio Braziliense",
+        "link": "https://correiobraziliense.com.br"
+      },
+      {
+        "type": "certified",
+        "dateStart": "2022",
+        "dateEnd": "2023",
+        "institution": "RocketSeat",
+        "role": "Ignite",
+        "locate": "Brasília, DF",
+        "description": "Expecialização através de um método eficiente, uma grade curricular alinhada com o mercado",
+        "link": ""
+      },
+      {
+        "type": "certified",
+        "dateStart": "2022",
+        "dateEnd": "2023",
+        "institution": "RocketSeat",
+        "role": "Explorer",
+        "locate": "Brasília, DF",
+        "description": "O Explorer contém tudo o que você precisa para desenvolver habilidades técnicas e comportamentais, iniciar uma carreira sólida na programação e se tornar um destaque",
+        "link": ""
       },
       {
         "type": "job",
@@ -27,8 +58,27 @@ export default function handler(req, res) {
         "institution": "Correio Braziliense",
         "role": "Analista FrontEnd",
         "locate": "Brasília, DF",
-        "description": "Atual emprego e fonte de novos desafios pessoais e profissionais."
+        "description": "Atual emprego e fonte de novos desafios pessoais e profissionais"
+      },
+      {
+        "type": "job",
+        "dateStart": "2020",
+        "dateEnd": "2022",
+        "institution": "Tribunais Regionais Federais",
+        "role": "Estágio",
+        "locate": "Brasília, DF",
+        "description": "Estágio de desenvolvimento no TRF, onde aprendi novas tecnologias como HTML, CSS, JS e Git"
+      },
+      {
+        "type": "study",
+        "dateStart": "2018",
+        "dateEnd": "2023",
+        "institution": "Centro Universitário de Brasília",
+        "role": "Univercity",
+        "locate": "Brasília, DF",
+        "description": "Graduando em Ciência da Computação"
       }
+      
     ],
     expertise: [
       {
