@@ -70,7 +70,7 @@ export default function handler(req, res) {
     skills: [
       {
         "title": "HTML",
-        "size": "60"
+        "size": "70"
       },
       {
         "title": "CSS",
@@ -121,7 +121,7 @@ export default function handler(req, res) {
       },
       {
         "title": "Google Analytics",
-        "size": "40"
+        "size": "20"
       },
       {
         "title": "SEO",
