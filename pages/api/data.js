@@ -44,7 +44,7 @@ export default function handler(req, res) {
       {
         "type": "certified",
         "dateStart": "2022",
-        "dateEnd": "2023",
+        "dateEnd": "2022",
         "institution": "RocketSeat",
         "role": "Explorer",
         "locate": "Brasília, DF",
@@ -74,7 +74,7 @@ export default function handler(req, res) {
         "dateStart": "2018",
         "dateEnd": "2023",
         "institution": "Centro Universitário de Brasília",
-        "role": "Univercity",
+        "role": "University",
         "locate": "Brasília, DF",
         "description": "Graduando em Ciência da Computação"
       }
