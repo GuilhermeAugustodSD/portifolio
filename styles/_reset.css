@@ -28,6 +28,16 @@ a {
   }
 }
 
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: rgba(255, 255, 255, 0.873);
+    background: #11101b;
+  }
+}
+
 .certified:first-child{
   background-color: #ff9ff3 !important;
 }
