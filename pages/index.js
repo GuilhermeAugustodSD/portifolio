@@ -17,6 +17,7 @@ export default function Home() {
   const [expertise, setExpertise] = useState();
   const [skills, setSkills] = useState();
   const [experience, setExperience] = useState();
+  const [language, setLanguage] = useState("BR");
   useEffect(() => {
     fetch(`/api/about`)
       .then((response) => response.json())
@@ -32,7 +33,15 @@ export default function Home() {
         setExperience(response.experience);
       });
 
-  }, []);
+      
+    }, []);
+    
+    function changeLanguage(lang) {
+      console.log("***",lang);
+      setLanguage(lang)
+      console.log(language);
+    }
+    
 
   return (
     <div className={styles.container}>
@@ -71,10 +80,10 @@ export default function Home() {
           <div className={styles.contentHeader}>
             <div>
               <div>
-                <Flag country="BR" />
+                <Flag country="BR" onClick={() => changeLanguage('BR')} />
               </div>
               <div>
-                <Flag country="US" />
+                <Flag country="US" onClick={() => changeLanguage('US')}/>
               </div>
             </div>
           </div>
@@ -99,7 +108,13 @@ export default function Home() {
               <li className={styles.local}>
                 <div>
                   <MapPin size={16} />
-                  <small>Local</small>
+                  {(language == "BR") && (
+                    <small>Local</small>
+                  )}
+
+                  {(language == "US") && (
+                    <small>Place</small>
+                  )}
                 </div>
                 <div>Brasília, DF</div>
               </li>
@@ -142,23 +157,41 @@ export default function Home() {
         <section>
           <header className={styles.col}>
             <h3>Intro</h3>
-            <small>Um pouco sobre meu <strong>perfil</strong></small>
+            {(language == 'US') && (
+              <small>A little about my <strong>profile</strong></small>
+            )}
+
+            {(language == 'BR') && (
+              <small>Um pouco sobre meu <strong>perfil</strong></small>
+            )}
           </header>
           <main className={styles.col}>
-            <p className={styles.firstParagraph}>
-              Bem vindo!
-            </p>
-            <p>
-              Me chamo {about?.name}, tenho {about?.age} anos e moro em {about?.leave}. Trabalho pela minha empresa Dantas IT como 
-              desenvolvedor de software.
-              Estudante de Ciência da Computação, atuo com tecnologia a {about?.workingTime} anos.
-              {/* Conquistei <a href="#awards">três prêmios</a> nos últimos anos. */}
-            </p>
-            {/* <p>Atualmente, foco no desenvolvimento frontend para aplicações web e mobile.</p> */}
-            <p>Possuo um perfil comunicativo, responsável, engajado e disposto a absorver desafios.
-              Tenho muito interesse em novas tecnologias e tendências de mercado.
-            </p>
-            <p>Confira algumas das minhas experiências: </p>
+            {(language == "US") && (
+              <>
+                <p className={styles.firstParagraph}> Welcome!</p>
+                <p>
+                Hi. I&#39;m {about?.name}. I&#39;m {about?.age} years old Brazilian software developer, currently living in {about?.leave}, attending the last semester of computer science at Centro Universitário de Brasília and  counting with more than {about?.workingTime} years of working experience in web development. Fluent Portuguese and working knowledge of english.
+                </p>
+                <p>I have a communicative, responsible, engaged and willing to absorb challenges profile. I am very interested in new technologies and market trends.</p>
+                <p>Check out some of my experiences: </p>
+              </>
+            )}
+
+            {(language == "BR") && (
+              <>
+                <p className={styles.firstParagraph}> Bem Vindo!</p>
+                <p>
+                  Me chamo {about?.name}, tenho {about?.age} anos e moro em {about?.leave}. Trabalho pela minha empresa Dantas IT como 
+                  desenvolvedor de software.
+                  Estudante de Ciência da Computação, atuo com tecnologia há {about?.workingTime} anos.
+                </p>
+                <p>Possuo um perfil comunicativo, responsável, engajado e disposto a absorver desafios.
+                  Tenho muito interesse em novas tecnologias e tendências de mercado.
+                </p>
+                <p>Confira algumas das minhas experiências: </p>
+              </>
+            )}
+            
           </main>
         </section>
 

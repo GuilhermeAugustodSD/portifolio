@@ -190,15 +190,5 @@ export default function handler(req, res) {
         "size": "65"
       },
     ],
-    // clients: [
-    //   {
-    //     name: 'Correio Braziliense',
-    //     image: '/images/clients/cb.jpg'
-    //   },
-    //   {
-    //     name: 'Mais Goiás',
-    //     image: '/images/clients/mg.jpg'
-    //   },
-    // ]
   })
 }
