@@ -139,11 +139,11 @@ export default function handler(req, res) {
       },
       {
         "title": "React",
-        "size": "60"
+        "size": "80"
       },
       {
         "title": "NextJS",
-        "size": "50"
+        "size": "65"
       },
       {
         "title": "NodeJS",
@@ -183,7 +183,11 @@ export default function handler(req, res) {
       },
       {
         "title": "Adobe Photoshop",
-        "size": "70"
+        "size": "80"
+      },
+      {
+        "title": "Figma",
+        "size": "65"
       },
     ],
     // clients: [
