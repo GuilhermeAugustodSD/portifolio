@@ -105,7 +105,7 @@ export default function Home() {
           <div className={styles.contentFooter}>
             <hr />
             <ul className={styles.perosnalContact}>
-              <li className={styles.local}>
+              {/* <li className={styles.local}>
                 <div>
                   <MapPin size={16} />
                   {(language == "BR") && (
@@ -117,7 +117,7 @@ export default function Home() {
                   )}
                 </div>
                 <div>Brasília, DF</div>
-              </li>
+              </li> */}
               <li className={styles.whatsapp}>
                 <div>
                   <Phone size={16} />
@@ -170,7 +170,7 @@ export default function Home() {
               <>
                 <p className={styles.firstParagraph}> Welcome!</p>
                 <p>
-                Hi. I&#39;m {about?.name}. I&#39;m {about?.age} years old Brazilian software developer, currently living in {about?.leave}, attending the last semester of computer science at Centro Universitário de Brasília and  counting with more than {about?.workingTime} years of working experience in web development. Fluent Portuguese and working knowledge of english.
+                  Hi. I&#39;m {about?.name}. I&#39;m {about?.age} years old Brazilian software developer, currently living in {about?.leave}, attending the last semester of computer science at Centro Universitário de Brasília and  counting with more than {about?.workingTime} years of working experience in web development. <br/> Fluent Portuguese and working knowledge of english B2.
                 </p>
                 <p>I have a communicative, responsible, engaged and willing to absorb challenges profile. I am very interested in new technologies and market trends.</p>
                 <p>Check out some of my experiences: </p>
