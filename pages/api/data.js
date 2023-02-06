@@ -120,11 +120,11 @@ export default function handler(req, res) {
     skills: [
       {
         "title": "HTML",
-        "size": "70"
+        "size": "80"
       },
       {
         "title": "CSS",
-        "size": "65",
+        "size": "70",
         "prop": {
           "1": "Stylus",
           "2": "PostCSS",
@@ -135,7 +135,7 @@ export default function handler(req, res) {
       },
       {
         "title": "Javascript",
-        "size": "65"
+        "size": "70"
       },
       {
         "title": "React",
@@ -143,19 +143,19 @@ export default function handler(req, res) {
       },
       {
         "title": "NextJS",
-        "size": "65"
+        "size": "70"
       },
       {
         "title": "NodeJS",
-        "size": "55"
+        "size": "50"
       },
       {
         "title": "Git",
-        "size": "60"
+        "size": "75"
       },
       {
         "title": "PHP",
-        "size": "30"
+        "size": "50"
       },
       {
         "title": "Python",
