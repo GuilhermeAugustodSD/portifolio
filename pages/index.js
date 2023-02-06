@@ -113,7 +113,7 @@ export default function Home() {
                   )}
 
                   {(language == "US") && (
-                    <small>Place</small>
+                    <small>Local</small>
                   )}
                 </div>
                 <div>Brasília, DF</div>
@@ -158,7 +158,7 @@ export default function Home() {
           <header className={styles.col}>
             <h3>Intro</h3>
             {(language == 'US') && (
-              <small>A little about my <strong>profile</strong></small>
+              <small>My <strong>profile</strong></small>
             )}
 
             {(language == 'BR') && (
