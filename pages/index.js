@@ -170,7 +170,7 @@ export default function Home() {
               <>
                 <p className={styles.firstParagraph}> Welcome!</p>
                 <p>
-                  Hi. I&#39;m {about?.name}. I&#39;m {about?.age} years old Brazilian software developer, currently living in {about?.leave}, attending the last semester of computer science at Centro Universitário de Brasília and  counting with more than {about?.workingTime} years of working experience in web development. <br/> Fluent Portuguese and working knowledge of english B2.
+                  Hi. I&#39;m {about?.name}. I&#39;m {about?.age} years old Brazilian software developer, currently living in {about?.leave}, attending the last semester of computer science at Centro Universitário de Brasília and  counting with more than {about?.workingTime} years of working experience in web development. <br/><br/> Fluent Portuguese and working knowledge of english B2.
                 </p>
                 <p>I have a communicative, responsible, engaged and willing to absorb challenges profile. I am very interested in new technologies and market trends.</p>
                 <p>Check out my experiences: </p>
