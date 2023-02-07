@@ -206,7 +206,9 @@ export default function Home() {
           <Expertise 
             classTemplate={`${styles.col}`}
             data={expertise}
-          />
+            language={language}
+          />{console.log(expertise)}
+
         </section>
 
         <section id="skills">
@@ -228,10 +230,11 @@ export default function Home() {
             desc="Lugares por onde passei, atuei e aprendi."
             classTemplate={`${styles.col}`}
           />
-
+          
           <Experience 
             classTemplate={`${styles.col}`}
             data={experience}
+            language={language}
           />
         </section>
 

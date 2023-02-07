@@ -8,7 +8,8 @@ export default function handler(req, res) {
         "institution": "Escolha a Escola",
         "role": "Guia de escolas",
         "locate": "Brasília, DF",
-        "description": "Guia de escolas do DF utilizando Next.JS, Laravel e AWS",
+        "descriptionBR": "Guia de escolas do DF utilizando Next.JS, Laravel e AWS",
+        "descriptionUS": "Guia de escolas do DF utilizando Next.JS, Laravel e AWS",
         "link": "https://escolhaaescola.correiobraziliense.com.br"
       },
       {
@@ -18,7 +19,8 @@ export default function handler(req, res) {
         "institution": "Eleições 2022",
         "role": "Cobertura das eleições",
         "locate": "Brasília, DF",
-        "description": "Guia de EleiçÕes do DF utilizando Next.JS, Laravel e AWS",
+        "descriptionBR": "Guia de EleiçÕes do DF utilizando Next.JS, Laravel e AWS",
+        "descriptionUS": "Guia de EleiçÕes do DF utilizando Next.JS, Laravel e AWS",
         "link": "https://eleicoes.correiobraziliense.com.br"
       },
       {
@@ -28,7 +30,8 @@ export default function handler(req, res) {
         "institution": "Correio Braziliense",
         "role": "Capa do Correio Braziliense",
         "locate": "Brasília, DF",
-        "description": "Capa do Correio Braziliense",
+        "descriptionBR": "Capa do Correio Braziliense",
+        "descriptionUS": "Capa do Correio Braziliense",
         "link": "https://correiobraziliense.com.br"
       },
       {
@@ -38,7 +41,8 @@ export default function handler(req, res) {
         "institution": "RocketSeat",
         "role": "Ignite",
         "locate": "Brasília, DF",
-        "description": "Expecialização através de um método eficiente, uma grade curricular alinhada com o mercado",
+        "descriptionBR": "Expecialização através de um método eficiente, uma grade curricular alinhada com o mercado",
+        "descriptionUS": "React, Node and React Native specializarion and development program",
         "link": ""
       },
       {
@@ -48,7 +52,8 @@ export default function handler(req, res) {
         "institution": "RocketSeat",
         "role": "Explorer",
         "locate": "Brasília, DF",
-        "description": "O Explorer contém tudo o que você precisa para desenvolver habilidades técnicas e comportamentais, iniciar uma carreira sólida na programação e se tornar um destaque",
+        "descriptionBR": "O Explorer contém tudo o que você precisa para desenvolver habilidades técnicas e comportamentais, iniciar uma carreira sólida na programação e se tornar um destaque",
+        "descriptionUS": "React, Node and React Native specializarion and development program",
         "link": ""
       },
       {
@@ -58,7 +63,8 @@ export default function handler(req, res) {
         "institution": "Correio Braziliense",
         "role": "Analista FrontEnd",
         "locate": "Brasília, DF",
-        "description": "Atual emprego e fonte de novos desafios pessoais e profissionais"
+        "descriptionBR": "Atual emprego e fonte de novos desafios pessoais e profissionais",
+        "descriptionUS": "Atual emprego e fonte de novos desafios pessoais e profissionais"
       },
       {
         "type": "job",
@@ -67,7 +73,8 @@ export default function handler(req, res) {
         "institution": "Tribunais Regionais Federais",
         "role": "Estágio",
         "locate": "Brasília, DF",
-        "description": "Estágio de desenvolvimento no TRF, onde aprendi novas tecnologias como HTML, CSS, JS e Git"
+        "descriptionBR": "Estágio de desenvolvimento no TRF, onde aprendi novas tecnologias como HTML, CSS, JS e Git",
+        "descriptionUS": "Estágio de desenvolvimento no TRF, onde aprendi novas tecnologias como HTML, CSS, JS e Git"
       },
       {
         "type": "study",
@@ -76,22 +83,26 @@ export default function handler(req, res) {
         "institution": "Centro Universitário de Brasília",
         "role": "University",
         "locate": "Brasília, DF",
-        "description": "Graduando em Ciência da Computação"
+        "descriptionBR": "Graduando em Ciência da Computação",
+        "descriptionUS": "Graduando em Ciência da Computação"
       }
       
     ],
     expertise: [
       {
         "title": "Front-End",
-        "description": "A arte de juntar ótima experiência do usuário, boa navegação e tecnicas modernas de desenvolvimento para uma entrega eficiente e de alta performance."
+        "descriptionBR": "A arte de juntar ótima experiência do usuário, boa navegação e tecnicas modernas de desenvolvimento para uma entrega eficiente e de alta performance.",
+        "descriptionUS": "A arte de juntar ótima experiência do usuário, boa navegação e tecnicas modernas de desenvolvimento para uma entrega eficiente e de alta performance."
       },
       {
         "title": "WordPress",
-        "description": "Vivencia no CMS mais presente na web. Usado da forma correta e com os recursos certos, o WP pode ser o CMS da sua empresa."
+        "descriptionBR": "Vivencia no CMS mais presente na web. Usado da forma correta e com os recursos certos, o WP pode ser o CMS da sua empresa.",
+        "descriptionUS": "Vivencia no CMS mais presente na web. Usado da forma correta e com os recursos certos, o WP pode ser o CMS da sua empresa."
       },
       {
         "title": "Design Gráfico / UX",
-        "description": "Trabalho com ferramentas Adobe CC e Figma com foco na web."
+        "descriptionBR": "Trabalho com ferramentas Adobe CC e Figma com foco na web.",
+        "descriptionUS": "Trabalho com ferramentas Adobe CC e Figma com foco na web."
       }
     ],
     // awards: [
