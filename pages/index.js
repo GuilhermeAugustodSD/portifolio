@@ -90,9 +90,23 @@ export default function Home() {
 
           <div className={styles.contentBody}>
             <h1>Guilherme Dantas</h1>
-            <h2>Desenvolvedor Web<span> Frontend </span></h2>
+            {(language == 'US') && (
+              <h2>Web Developer</h2>
+            )}
+
+            {(language == 'BR') && (
+              <h2>Desenvolvedor Web<span> Frontend </span></h2>
+            )}
+            
             <button>
-              <a href='/pdf/cv.pdf' target="blanc">Baixe meu Currículo</a>
+              {(language == 'US') && (
+                <a href="/pdf/english-cv.pdf" target="blanc">Download my CV</a>
+              )}
+
+              {(language == 'BR') && (
+                <a href="/pdf/cv-portugues.pdf" target="blanc">Baixe meu Currículo</a>
+              )}
+              
             </button>
             {/* I am a WordPress Developer at heart and create features that are best suited for the job at hand. */}
             <ul className={styles.social}>
