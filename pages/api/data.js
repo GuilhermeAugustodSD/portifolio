@@ -42,7 +42,7 @@ export default function handler(req, res) {
         "role": "Ignite",
         "locate": "Brasília, DF",
         "descriptionBR": "Expecialização através de um método eficiente, uma grade curricular alinhada com o mercado",
-        "descriptionUS": "React, Node and React Native specializarion and development program",
+        "descriptionUS": "React, Node and React Native specialization and development program",
         "link": ""
       },
       {
@@ -53,7 +53,7 @@ export default function handler(req, res) {
         "role": "Explorer",
         "locate": "Brasília, DF",
         "descriptionBR": "O Explorer contém tudo o que você precisa para desenvolver habilidades técnicas e comportamentais, iniciar uma carreira sólida na programação e se tornar um destaque",
-        "descriptionUS": "React, Node and React Native specializarion and development program",
+        "descriptionUS": "React, Node and React Native specialization and development program",
         "link": ""
       },
       {
@@ -61,10 +61,10 @@ export default function handler(req, res) {
         "dateStart": "2022",
         "dateEnd": "atual",
         "institution": "Correio Braziliense",
-        "role": "Analista FrontEnd",
+        "role": "Analista Front-End",
         "locate": "Brasília, DF",
         "descriptionBR": "Atual emprego e fonte de novos desafios pessoais e profissionais",
-        "descriptionUS": "Atual emprego e fonte de novos desafios pessoais e profissionais"
+        "descriptionUS": "Current job. Most used techs: HTML, CSS, JS, React, NextJS, WordPress and Git."
       },
       {
         "type": "job",
@@ -74,7 +74,7 @@ export default function handler(req, res) {
         "role": "Estágio",
         "locate": "Brasília, DF",
         "descriptionBR": "Estágio de desenvolvimento no TRF, onde aprendi novas tecnologias como HTML, CSS, JS e Git",
-        "descriptionUS": "Estágio de desenvolvimento no TRF, onde aprendi novas tecnologias como HTML, CSS, JS e Git"
+        "descriptionUS": "Web development internship. Most used techs: HTML, CSS, JS e Git"
       },
       {
         "type": "study",
@@ -84,7 +84,7 @@ export default function handler(req, res) {
         "role": "University",
         "locate": "Brasília, DF",
         "descriptionBR": "Graduando em Ciência da Computação",
-        "descriptionUS": "Graduando em Ciência da Computação"
+        "descriptionUS": "Bachelor of Computer Science"
       }
       
     ],

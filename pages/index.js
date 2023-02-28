@@ -90,9 +90,23 @@ export default function Home() {
 
           <div className={styles.contentBody}>
             <h1>Guilherme Dantas</h1>
-            <h2>Desenvolvedor Web<span> Frontend </span></h2>
+            {(language == 'US') && (
+              <h2>Web Developer</h2>
+            )}
+
+            {(language == 'BR') && (
+              <h2>Desenvolvedor Web<span> Frontend </span></h2>
+            )}
+            
             <button>
-              <a href='/pdf/cv.pdf' target="blanc">Baixe meu Currículo</a>
+              {(language == 'US') && (
+                <a href="/pdf/english-cv.pdf" target="blanc">Download my CV</a>
+              )}
+
+              {(language == 'BR') && (
+                <a href="/pdf/cv-portugues.pdf" target="blanc">Baixe meu Currículo</a>
+              )}
+              
             </button>
             {/* I am a WordPress Developer at heart and create features that are best suited for the job at hand. */}
             <ul className={styles.social}>
@@ -199,7 +213,7 @@ export default function Home() {
         <section id="expertise">
           <HeaderSection 
             title="Expertise"
-            desc="Ainda faltam muitas linhas de código"
+            desc={language =="BR" ? "Ainda faltam muitas linhas de código" : ""}
             classTemplate={`${styles.col}`}
           />
 
@@ -213,8 +227,8 @@ export default function Home() {
 
         <section id="skills">
           <HeaderSection 
-            title="Habilidades"
-            desc="Linguagens, ferramentas e soluções"
+            title={language == "BR" ? "Habilidades" : "Skills"}
+            desc={language == "BR" ? "Linguagens, ferramentas e soluções" : "Languages, tools and solutions"}
             classTemplate={`${styles.col}`}
           />
 
@@ -226,8 +240,8 @@ export default function Home() {
 
         <section id="expirience">
           <HeaderSection 
-            title="Experiência e Formação"
-            desc="Lugares por onde passei, atuei e aprendi."
+            title={ language == "BR" ? "Experiência e Formação" : "Professional Experience and Education"}
+            desc={language == "BR" ? "Lugares por onde passei, atuei e aprendi." : ""}
             classTemplate={`${styles.col}`}
           />
           
