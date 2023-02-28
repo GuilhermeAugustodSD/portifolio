@@ -83,7 +83,7 @@ export default function Home() {
                 <Flag country="BR" onClick={() => changeLanguage('BR')} />
               </div>
               <div>
-                <Flag country="US" onClick={() => changeLanguage('US')}/>
+                <Flag country="GB" onClick={() => changeLanguage('US')}/>
               </div>
             </div>
           </div>
