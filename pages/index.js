@@ -241,7 +241,7 @@ export default function Home() {
         <section id="expirience">
           <HeaderSection 
             title={ language == "BR" ? "Experiência e Formação" : "Professional Experience and Education"}
-            desc={language == "BR" ? "Lugares por onde passei, atuei e aprendi." : ""}
+            desc={language == "BR" ? "Clique nas experiências para ver mais" : "Click on experince's name to see more"}
             classTemplate={`${styles.col}`}
           />
           
