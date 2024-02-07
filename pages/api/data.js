@@ -83,7 +83,7 @@ export default function handler(req, res) {
         "institution": "Centro Universitário de Brasília",
         "role": "University",
         "locate": "Brasília, DF",
-        "descriptionBR": "Graduando em Ciência da Computação",
+        "descriptionBR": "Graduado em Ciência da Computação",
         "descriptionUS": "Bachelor of Computer Science"
       }
       
@@ -131,11 +131,11 @@ export default function handler(req, res) {
     skills: [
       {
         "title": "HTML",
-        "size": "80"
+        "size": "90"
       },
       {
         "title": "CSS",
-        "size": "70",
+        "size": "85",
         "prop": {
           "1": "Stylus",
           "2": "PostCSS",
@@ -146,15 +146,23 @@ export default function handler(req, res) {
       },
       {
         "title": "Javascript",
-        "size": "70"
-      },
-      {
-        "title": "React",
         "size": "80"
       },
       {
+        "title": "React",
+        "size": "90"
+      },
+      {
         "title": "NextJS",
+        "size": "90"
+      },
+      {
+        "title": "WordPress",
         "size": "70"
+      },
+      {
+        "title": "SQL",
+        "size": "50"
       },
       {
         "title": "NodeJS",
@@ -162,11 +170,11 @@ export default function handler(req, res) {
       },
       {
         "title": "Git",
-        "size": "75"
+        "size": "85"
       },
       {
         "title": "PHP",
-        "size": "50"
+        "size": "80"
       },
       {
         "title": "Python",
@@ -182,11 +190,11 @@ export default function handler(req, res) {
       },
       {
         "title": "Google Analytics",
-        "size": "20"
+        "size": "50"
       },
       {
         "title": "SEO",
-        "size": "20"
+        "size": "50"
       },
       {
         "title": "Adobe Illustrator",
