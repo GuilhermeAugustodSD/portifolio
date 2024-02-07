@@ -91,11 +91,11 @@ export default function Home() {
           <div className={styles.contentBody}>
             <h1>Guilherme Dantas</h1>
             {(language == 'US') && (
-              <h2>Web Developer</h2>
+              <h2>Full Stack Developer</h2>
             )}
 
             {(language == 'BR') && (
-              <h2>Desenvolvedor Web<span> Frontend </span></h2>
+              <h2>Desenvolvedor<span> Full Stack </span></h2>
             )}
             
             <button>
