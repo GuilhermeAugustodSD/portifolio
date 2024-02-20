@@ -218,6 +218,7 @@ export default function Home() {
             title="Expertise"
             desc={language =="BR" ? "Ainda faltam muitas linhas de código" : ""}
             classTemplate={`${styles.col}`}
+            classSticky={`${styles.sticky}`}
           />
 
           <Expertise 
@@ -233,6 +234,7 @@ export default function Home() {
             title={language == "BR" ? "Habilidades" : "Skills"}
             desc={language == "BR" ? "Linguagens, ferramentas e soluções" : "Languages, tools and solutions"}
             classTemplate={`${styles.col}`}
+            classSticky={`${styles.sticky}`}
           />
 
           <Skills 
@@ -246,6 +248,7 @@ export default function Home() {
             title={ language == "BR" ? "Experiência e Formação" : "Professional Experience and Education"}
             desc={language == "BR" ? "Clique nas experiências para ver mais" : "Click on experince's name to see more"}
             classTemplate={`${styles.col}`}
+            classSticky={`${styles.sticky}`}
           />
           
           <Experience 
@@ -260,6 +263,8 @@ export default function Home() {
             title={ language == "BR" ? "Projetos" : "Projects"}
             desc={language == "BR" ? "Clique nos projetos para acessar o site" : "Click on the projects to access the website"}
             classTemplate={`${styles.col}`}
+            classSticky={`${styles.sticky}`}
+
           />
           
           <Projects 
