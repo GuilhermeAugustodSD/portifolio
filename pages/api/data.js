@@ -100,11 +100,17 @@ export default function handler(req, res) {
         "descriptionUS": "Vivencia no CMS mais presente na web. Usado da forma correta e com os recursos certos, o WP pode ser o CMS da sua empresa."
       },
       {
+        "title": "Back-End",
+        "descriptionBR": "Responsável por criar e manter a lógica e o funcionamento dos sistemas e aplicativos, garantindo que tudo opere de forma eficiente e segura nos bastidores.",
+        "descriptionUS": "Responsável por criar e manter a lógica e o funcionamento dos sistemas e aplicativos, garantindo que tudo opere de forma eficiente e segura nos bastidores."
+      },
+      {
         "title": "Design Gráfico / UX",
         "descriptionBR": "Trabalho com ferramentas Adobe CC e Figma com foco na web.",
         "descriptionUS": "Trabalho com ferramentas Adobe CC e Figma com foco na web."
       }
     ],
+   
     // awards: [
     //   {
     //     "link": "https://www.metropoles.com/materias-especiais/a-tragedia-de-mariana-mg-vista-pela-janela-do-trem-efvm",
@@ -128,6 +134,7 @@ export default function handler(req, res) {
     //     "title": "Ciclovias em busca de uma cidade"
     //   }
     // ],
+    
     skills: [
       {
         "title": "HTML",
