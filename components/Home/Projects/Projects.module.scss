@@ -1,0 +1,48 @@
+@import '../../../styles/variables.scss';
+
+.col2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 40px;
+  column-gap: 20px;
+  width: 100%;
+
+  @media(max-width: 1470px){
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  &>div{
+    width: 100%;
+  }
+
+  .item {
+    cursor: pointer;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+
+      picture {
+        background-color:  #1dd7f0;
+        border-radius: 11px;
+        img {
+          border-radius: 11px;
+          aspect-ratio: 16/9;
+          height: auto;
+          object-fit: cover;
+          filter: brightness(80%);
+          
+          @media(max-width: $screen-sm){
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+

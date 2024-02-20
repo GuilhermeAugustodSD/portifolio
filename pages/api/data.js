@@ -209,5 +209,74 @@ export default function handler(req, res) {
         "size": "65"
       },
     ],
+
+    projects: [
+      {
+        "title": "Capa do Correio Braziliense",
+        "date": "2022",
+        "site": "https://www.correiobraziliense.com.br/",
+        "img": "/images/capa-correio.png",
+        "company": "Correio Braziliense",
+        "skills": {
+          "1": "JavaScript",
+          "2": "HTML",
+          "3": "SASS",
+          "4": "SQL",
+        }
+      },
+      {
+        "title": "Site de cobertuda das Eleições 2022",
+        "date": "2022",
+        "site": "https://eleicoes.correiobraziliense.com.br/",
+        "img": "/images/capa-eleicoes.png",
+        "company": "Correio Braziliense",
+        "skills": {
+          "1": "NextJS",
+          "2": "HTML",
+          "3": "SASS",
+          "4": "SQL",
+        }
+      },
+      {
+        "title": "Escolha a Escola",
+        "date": "2023",
+        "site": "https://escolhaaescola.correiobraziliense.com.br/",
+        "img": "/images/capa-escolha-a-escola.png",
+        "company": "Correio Braziliense",
+        "skills": {
+          "1": "NextJS",
+          "2": "HTML",
+          "3": "SASS",
+          "4": "SQL",
+        }
+      },
+      {
+        "title": "Maratona Brasília 2023",
+        "date": "2023",
+        "site": "https://www.correiobraziliense.com.br/maratonabrasilia2023",
+        "img": "/images/capa-maratona.png",
+        "company": "Correio Braziliense",
+        "skills": {
+          "1": "JavaScript",
+          "2": "HTML",
+          "3": "SASS",
+          "4": "SQL",
+        }
+      },
+      {
+        "title": "Plataforma Cubus",
+        "date": "2024",
+        "site": "https://cinterfor.vulpecomunicacao.com.br/",
+        "img": "/images/capa-cubus.png",
+        "company": "Vulpe Comunicações",
+        "skills": {
+          "1": "NextJS",
+          "2": "HTML",
+          "3": "SASS",
+          "4": "WordPress",
+          "5": "GraphQL",
+        }
+      },
+    ],
   })
 }

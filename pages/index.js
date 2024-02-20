@@ -10,6 +10,7 @@ import HeaderSection from '../components/Header/HeaderSection'
 import Expertise from '../components/Home/Expertise/Expertise'
 import Experience from '../components/Home/Experience/Experience'
 import Skills from '../components/Home/Skills/Skills'
+import Projects from '../components/Home/Projects/Projects'
 
 export default function Home() {
 
@@ -17,6 +18,7 @@ export default function Home() {
   const [expertise, setExpertise] = useState();
   const [skills, setSkills] = useState();
   const [experience, setExperience] = useState();
+  const [projects, setProjects] = useState();
   const [language, setLanguage] = useState("BR");
   useEffect(() => {
     fetch(`/api/about`)
@@ -31,6 +33,7 @@ export default function Home() {
         setExpertise(response.expertise);
         setSkills(response.skills);
         setExperience(response.experience);
+        setProjects(response.projects);
       });
 
       
@@ -248,6 +251,20 @@ export default function Home() {
           <Experience 
             classTemplate={`${styles.col}`}
             data={experience}
+            language={language}
+          />
+        </section>
+
+        <section id="projects">
+          <HeaderSection 
+            title={ language == "BR" ? "Projetos" : "Projects"}
+            desc={language == "BR" ? "Clique nos projetos para acessar o site" : "Click on the projects to access the website"}
+            classTemplate={`${styles.col}`}
+          />
+          
+          <Projects 
+            classTemplate={`${styles.col}`}
+            data={projects}
             language={language}
           />
         </section>
