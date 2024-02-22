@@ -190,15 +190,46 @@
           align-items: center;
         }
 
-        h1{
+        h1 {
           font-size: 6rem;
           line-height: 1.2;
           margin: 0;
           padding: 0;
-          display: block;
-          width: 100%;
+          // display: block;
+          width: max-content;
+          height: 115px;
           color: $color-30;
           text-transform: uppercase;
+          position: relative;
+          display: flex;
+          align-items: center;
+          padding-right: 10px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 1px;
+            height: 100px;
+            background-color: #d3d3d3;
+            animation: pisca 1s steps(2) infinite;
+
+            @media (max-width: $screen-sm) {
+              height: 50px;
+            }
+
+
+          }
+
+          @keyframes pisca {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+            
+          }
 
           @media(max-width: $screen-sm){
             font-size: 2.5rem;

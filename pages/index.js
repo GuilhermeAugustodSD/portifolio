@@ -11,6 +11,7 @@ import Expertise from '../components/Home/Expertise/Expertise'
 import Experience from '../components/Home/Experience/Experience'
 import Skills from '../components/Home/Skills/Skills'
 import Projects from '../components/Home/Projects/Projects'
+import Canvas from '../components/Home/Canvas/Canvas'
 
 export default function Home() {
 
@@ -36,15 +37,15 @@ export default function Home() {
         setProjects(response.projects);
       });
 
-      
-    }, []);
-    
-    function changeLanguage(lang) {
-      console.log("***",lang);
-      setLanguage(lang)
-      console.log(language);
-    }
-    
+
+  }, []);
+
+  function changeLanguage(lang) {
+    console.log("***", lang);
+    setLanguage(lang)
+    console.log(language);
+  }
+
 
   return (
     <div className={styles.container}>
@@ -71,7 +72,6 @@ export default function Home() {
 
       <header className={styles.header}>
 
-
         <div className={`${styles.col} ${styles.col1}`}>
           <picture>
             <Image src="/images/avatar.jpeg" alt="Foto Guilherme" width={540} height={400} />
@@ -86,13 +86,15 @@ export default function Home() {
                 <Flag country="BR" onClick={() => changeLanguage('BR')} />
               </div>
               <div>
-                <Flag country="GB" onClick={() => changeLanguage('US')}/>
+                <Flag country="GB" onClick={() => changeLanguage('US')} />
               </div>
             </div>
           </div>
 
           <div className={styles.contentBody}>
-            <h1>Guilherme Dantas</h1>
+            {/* <h1>Guilherme Dantas</h1> */}
+            <Canvas />
+
             {(language == 'US') && (
               <h2>Full Stack Developer</h2>
             )}
@@ -100,7 +102,7 @@ export default function Home() {
             {(language == 'BR') && (
               <h2>Desenvolvedor<span> Full Stack </span></h2>
             )}
-            
+
             <button>
               {(language == 'US') && (
                 <a href="/pdf/english-cv.pdf" target="blanc">Download my CV</a>
@@ -109,7 +111,7 @@ export default function Home() {
               {(language == 'BR') && (
                 <a href="/pdf/cv-portugues.pdf" target="blanc">Baixe meu Currículo</a>
               )}
-              
+
             </button>
             {/* I am a WordPress Developer at heart and create features that are best suited for the job at hand. */}
             <ul className={styles.social}>
@@ -199,7 +201,7 @@ export default function Home() {
               <>
                 <p className={styles.firstParagraph}> Bem Vindo!</p>
                 <p>
-                  Me chamo {about?.name}, tenho {about?.age} anos e moro em {about?.leave}. Trabalho pela minha empresa Dantas IT como 
+                  Me chamo {about?.name}, tenho {about?.age} anos e moro em {about?.leave}. Trabalho pela minha empresa Dantas IT como
                   desenvolvedor de software.
                   Estudante de Ciência da Computação, atuo com tecnologia há {about?.workingTime} anos.
                 </p>
@@ -209,19 +211,19 @@ export default function Home() {
                 <p>Confira algumas das minhas experiências: </p>
               </>
             )}
-            
+
           </main>
         </section>
 
         <section id="expertise">
-          <HeaderSection 
+          <HeaderSection
             title="Expertise"
-            desc={language =="BR" ? "Ainda faltam muitas linhas de código" : ""}
+            desc={language == "BR" ? "Ainda faltam muitas linhas de código" : ""}
             classTemplate={`${styles.col}`}
             classSticky={`${styles.sticky}`}
           />
 
-          <Expertise 
+          <Expertise
             classTemplate={`${styles.col}`}
             data={expertise}
             language={language}
@@ -230,28 +232,28 @@ export default function Home() {
         </section>
 
         <section id="skills">
-          <HeaderSection 
+          <HeaderSection
             title={language == "BR" ? "Habilidades" : "Skills"}
             desc={language == "BR" ? "Linguagens, ferramentas e soluções" : "Languages, tools and solutions"}
             classTemplate={`${styles.col}`}
             classSticky={`${styles.sticky}`}
           />
 
-          <Skills 
+          <Skills
             classTemplate={`${styles.col}`}
             data={skills}
           />
         </section>
 
         <section id="expirience">
-          <HeaderSection 
-            title={ language == "BR" ? "Experiência e Formação" : "Professional Experience and Education"}
+          <HeaderSection
+            title={language == "BR" ? "Experiência e Formação" : "Professional Experience and Education"}
             desc={language == "BR" ? "Clique nas experiências para ver mais" : "Click on experince's name to see more"}
             classTemplate={`${styles.col}`}
             classSticky={`${styles.sticky}`}
           />
-          
-          <Experience 
+
+          <Experience
             classTemplate={`${styles.col}`}
             data={experience}
             language={language}
@@ -259,15 +261,15 @@ export default function Home() {
         </section>
 
         <section id="projects">
-          <HeaderSection 
-            title={ language == "BR" ? "Projetos" : "Projects"}
+          <HeaderSection
+            title={language == "BR" ? "Projetos" : "Projects"}
             desc={language == "BR" ? "Clique nos projetos para acessar o site" : "Click on the projects to access the website"}
             classTemplate={`${styles.col}`}
             classSticky={`${styles.sticky}`}
 
           />
-          
-          <Projects 
+
+          <Projects
             classTemplate={`${styles.col}`}
             data={projects}
             language={language}
