@@ -12,6 +12,7 @@ import Experience from '../components/Home/Experience/Experience'
 import Skills from '../components/Home/Skills/Skills'
 import Projects from '../components/Home/Projects/Projects'
 import Canvas from '../components/Home/Canvas/Canvas'
+import Analytics from '../components/Analytics/Analytics'
 
 export default function Home() {
 
@@ -68,6 +69,7 @@ export default function Home() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
+        <Analytics id="1" trakingID="G-EZ5X0QJCE0" />
       </Head>
 
       <header className={styles.header}>
@@ -102,17 +104,18 @@ export default function Home() {
             {(language == 'BR') && (
               <h2>Desenvolvedor<span> Full Stack </span></h2>
             )}
+            <div className={styles.containerButton}>
+              <button>
+                {(language == 'US') && (
+                  <a href="/pdf/english-cv.pdf" target="blanc">Download my CV</a>
+                )}
 
-            <button>
-              {(language == 'US') && (
-                <a href="/pdf/english-cv.pdf" target="blanc">Download my CV</a>
-              )}
+                {(language == 'BR') && (
+                  <a href="/pdf/cv-portugues.pdf" target="blanc">Baixe meu Currículo</a>
+                )}
 
-              {(language == 'BR') && (
-                <a href="/pdf/cv-portugues.pdf" target="blanc">Baixe meu Currículo</a>
-              )}
-
-            </button>
+              </button>
+            </div>
             {/* I am a WordPress Developer at heart and create features that are best suited for the job at hand. */}
             <ul className={styles.social}>
               <li><a href="https://github.com/guilhermeaugustodsd/" title="Github"><GitHub size={24} /></a></li>
