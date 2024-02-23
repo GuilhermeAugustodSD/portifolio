@@ -193,6 +193,7 @@
         h1 {
           font-size: 6rem;
           line-height: 1.2;
+          font-weight: 900;
           margin: 0;
           padding: 0;
           // display: block;
@@ -261,16 +262,22 @@
           padding: 10px;
           margin: 0 0 8px 12px;
           width: 200px;
+
           a {
             font-family: $font-2;
             font-weight: bold;
-            color: white;
+            color: $bg;
+            font-weight: 900;
           }
 
           &:hover {
             transition: .3ms;
             border: 1px solid $purpe-100;
             background-color: #11101b;
+            
+            a {
+              color: #FFF;
+            }
           }
         }
 
