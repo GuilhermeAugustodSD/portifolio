@@ -195,11 +195,10 @@ export default function Home() {
               <>
                 <p className={styles.firstParagraph}> Welcome!</p>
                 <p>
-                  Hi. I&#39;m {about?.name}. I&#39;m {about?.age} years old Brazilian software developer, currently living in {about?.leave}, attending the last semester of computer science at Centro Universitário de Brasília and  counting with more than {about?.workingTime} years of working experience in web development.
+                  Hi. I&#39;m {about?.name}. I&#39;m {about?.age} years old Brazilian software developer, currently living in {about?.leave}, attending the last semester of computer science at Centro Universitário de Brasília and counting with more than {about?.workingTime} years of working experience in web development.
                 </p>
                 <p>Fluent Portuguese and working knowledge of english B2.</p>
                 <p>I have a communicative, responsible, engaged and willing to absorb challenges profile. I am very interested in new technologies and market trends.</p>
-                <p>Check out my experiences: </p>
               </>
             )}
 
@@ -209,12 +208,11 @@ export default function Home() {
                 <p>
                   Me chamo {about?.name}, tenho {about?.age} anos e moro em {about?.leave}. Trabalho pela minha empresa Dantas IT como
                   desenvolvedor de software.
-                  Estudante de Ciência da Computação, atuo com tecnologia há {about?.workingTime} anos.
+                  Formado em Ciência da Computação, atuo com tecnologia há {about?.workingTime} anos.
                 </p>
                 <p>Possuo um perfil comunicativo, responsável, engajado e disposto a absorver desafios.
                   Tenho muito interesse em novas tecnologias e tendências de mercado.
                 </p>
-                <p>Confira algumas das minhas experiências: </p>
               </>
             )}
 
