@@ -36,6 +36,9 @@ function MyApp({ Component, pageProps }) {
           h1, h2, h3, h4, h5, h6{
             font-family: ${oswald.style.fontFamily}
           }
+          a {
+            font-family: ${oswald.style.fontFamily}
+          }
         `}</style>
         <Component {...pageProps} />
         {/* <Analytics 

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.scss'
-import { GitHub, Linkedin, Twitter, Instagram, MapPin, Phone, Globe, Mail } from 'react-feather'
+import { GitHub, Linkedin, Twitter, Instagram, MapPin, Phone, Globe, Mail, DownloadCloud } from 'react-feather'
 import Flag from 'react-flagkit'
 import { useState, useEffect } from 'react'
 
@@ -22,6 +22,9 @@ export default function Home() {
   const [experience, setExperience] = useState();
   const [projects, setProjects] = useState();
   const [language, setLanguage] = useState("BR");
+  const [titlePDF, setTitlePDF] = useState("Baixe meu currículo")
+  const [urlPDF, setUrlPDF] = useState("/pdf/cv-portugues.pdf")
+
   useEffect(() => {
     fetch(`/api/about`)
       .then((response) => response.json())
@@ -46,6 +49,16 @@ export default function Home() {
     setLanguage(lang)
     console.log(language);
   }
+
+  useEffect(() => {
+    if (language == "BR") {
+      setUrlPDF("/pdf/cv-portugues.pdf");
+      setTitlePDF("Baixe meu currículo");
+    } else {
+      setUrlPDF("/pdf/english-cv.pdf");
+      setTitlePDF("Download my CV");
+    }
+  }, [language])
 
 
   return (
@@ -104,23 +117,13 @@ export default function Home() {
             {(language == 'BR') && (
               <h2>Desenvolvedor<span> Full Stack </span></h2>
             )}
-            <div className={styles.containerButton}>
-              <button>
-                {(language == 'US') && (
-                  <a href="/pdf/english-cv.pdf" target="blanc">Download my CV</a>
-                )}
 
-                {(language == 'BR') && (
-                  <a href="/pdf/cv-portugues.pdf" target="blanc">Baixe meu Currículo</a>
-                )}
-
-              </button>
-            </div>
             {/* I am a WordPress Developer at heart and create features that are best suited for the job at hand. */}
             <ul className={styles.social}>
               <li><a href="https://github.com/guilhermeaugustodsd/" title="Github"><GitHub size={24} /></a></li>
               <li><a href="https://www.linkedin.com/in/guilhermedanta-s/" title="Linkedin"><Linkedin size={24} /></a></li>
               <li><a href="https://www.instagram.com/guilherme.asdantas/" title="Instagram"><Instagram size={24} /></a></li>
+              <li><a href={urlPDF} title={titlePDF} ><DownloadCloud size={24} /></a></li>
             </ul>
           </div>
 
