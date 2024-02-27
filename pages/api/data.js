@@ -168,12 +168,16 @@ export default function handler(req, res) {
         "size": "70"
       },
       {
+        "title": "GraphQL",
+        "size": "70"
+      },
+      {
         "title": "SQL",
-        "size": "50"
+        "size": "65"
       },
       {
         "title": "NodeJS",
-        "size": "50"
+        "size": "65"
       },
       {
         "title": "Git",
@@ -193,7 +197,7 @@ export default function handler(req, res) {
       },
       {
         "title": "AWS",
-        "size": "30"
+        "size": "50"
       },
       {
         "title": "Google Analytics",
