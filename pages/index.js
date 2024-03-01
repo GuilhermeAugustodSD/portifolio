@@ -193,25 +193,31 @@ export default function Home() {
           <main className={styles.col}>
             {(language == "US") && (
               <>
-                <p className={styles.firstParagraph}> Welcome!</p>
+                <p className={styles.firstParagraph}>Hello and welcome!</p>
                 <p>
-                  Hi. I&#39;m {about?.name}. I&#39;m {about?.age} years old Brazilian software developer, currently living in {about?.leave}, attending the last semester of computer science at Centro Universitário de Brasília and counting with more than {about?.workingTime} years of working experience in web development.
+                  I am Guilherme Dantas, a {about?.age}-year-old technology enthusiast, thirsty for innovation and residing in Brasília-DF. As a software developer leading Dantas IT, my journey in the world of technology began {about?.workingTime} years ago. I graduated in Computer Science from the University Center of Brasília.
                 </p>
-                <p>Fluent Portuguese and working knowledge of english B2.</p>
-                <p>I have a communicative, responsible, engaged and willing to absorb challenges profile. I am very interested in new technologies and market trends.</p>
+                <p>My profile is marked by a combination of technical skills and personal traits that drive my professional growth. I am naturally communicative, responsible, and committed to everything I set out to do. I see each challenge as an opportunity for learning and growth, constantly seeking to improve myself and adapt to new market trends.
+                </p>
+
+                <p>
+                  My passionate interest in new technologies and market trends not only shapes my work but also drives me to explore new horizons and blaze new digital trails.
+                </p>
+              
               </>
             )}
 
             {(language == "BR") && (
               <>
-                <p className={styles.firstParagraph}> Bem Vindo!</p>
+                <p className={styles.firstParagraph}>Olá e bem-vindo!</p>
                 <p>
-                  Me chamo {about?.name}, tenho {about?.age} anos e moro em {about?.leave}. Trabalho pela minha empresa Dantas IT como
-                  desenvolvedor de software.
-                  Formado em Ciência da Computação, atuo com tecnologia há {about?.workingTime} anos.
+                  Sou Guilherme Dantas, um entusiasta da tecnologia de {about?.age} anos, com sede de inovação e residente em Brasília-DF. Como desenvolvedor de software à frente da Dantas IT, minha jornada no mundo da tecnologia começou há {about?.workingTime} anos. Graduado em Ciência da Computação pelo Centro Universitário de Brasília.
                 </p>
-                <p>Possuo um perfil comunicativo, responsável, engajado e disposto a absorver desafios.
-                  Tenho muito interesse em novas tecnologias e tendências de mercado.
+                <p>Meu perfil é marcado por uma combinação de habilidades técnicas e traços pessoais que impulsionam meu crescimento profissional. Sou comunicativo por natureza, responsável e engajado em tudo o que me proponho a fazer. Encaro cada desafio como uma oportunidade de aprendizado e crescimento, buscando constantemente me aprimorar e me adaptar às novas tendências do mercado.
+                </p>
+
+                <p>
+                  Meu interesse apaixonado por novas tecnologias e tendências de mercado não apenas molda meu trabalho, mas também me impulsiona a explorar novos horizontes e desbravar novos territórios digitais.
                 </p>
               </>
             )}
