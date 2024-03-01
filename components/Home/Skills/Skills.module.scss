@@ -32,7 +32,7 @@
   
   .progressBar{
     transition: width 1.4s ease-in-out .5s;
-    background: $purpe-100;
+    background: $primary-color;
     height: 100%;
     -webkit-animation: animate-stripes 5s linear;
     animation: animate-stripes 5s linear;

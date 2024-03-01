@@ -53,7 +53,7 @@
       border-radius: 100%;
       animation: morph 8s ease-in-out infinite 1s;
       overflow: hidden;
-      box-shadow: 0px 0px 0px 8px $purpe-100;
+      box-shadow: 0px 0px 0px 8px $primary-color;
       position: relative;
       z-index: 1;
 
@@ -62,7 +62,7 @@
         height: 120px;
         min-width: 120px;
         min-height: 120px;
-        box-shadow: 0px 0px 0px 4px $purpe-100;
+        box-shadow: 0px 0px 0px 4px $primary-color;
       }
       
       img {
@@ -200,7 +200,7 @@
           // display: block;
           width: max-content;
           height: 115px;
-          color: $color-30;
+          color: $primary-color;
           text-transform: uppercase;
           position: relative;
           display: flex;
@@ -256,14 +256,14 @@
         //   max-height: 45px;
         //   width: 100%;
         //   height: 45px;
-        //   background-color: $purpe-100;
+        //   background-color: $primary-color;
         //   border-radius: 11px 14px 11px 17px;
 
         //   position: relative;
 
           
         //   button {
-        //     // background-color: $purpe-100;
+        //     // background-color: $primary-color;
         //     position: absolute;
         //     top: 0;
         //     left: 0;
@@ -306,7 +306,7 @@
         //   max-height: 45px;
         //   width: 100%;
         //   height: 45px;
-        //   background-color: $purpe-100;
+        //   background-color: $primary-color;
         //   // background-color: #26293a;
 
         //   border-radius: 11px;
@@ -327,7 +327,7 @@
 
         //     transition: 300ms;
         //     cursor: pointer;
-        //     // background-color: $purpe-100;
+        //     // background-color: $primary-color;
 
         //     background-color: rgb(248, 248, 248);
         //     border-radius: 11px;

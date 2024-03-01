@@ -30,7 +30,7 @@
     position: absolute;
     left: -6px;
     border-radius: 50%;
-    background-color: $purpe-100;
+    background-color: $primary-color;
     z-index: 2;
     box-shadow: 0 0 0 6px #323232;
   }
@@ -78,7 +78,7 @@
   h5{
     margin: 0;
     padding: 0 0 .8rem;
-    color: $purpe-100;
+    color: $primary-color;
     font-size: .6rem;
     font-weight: 900;
     text-transform: uppercase;
