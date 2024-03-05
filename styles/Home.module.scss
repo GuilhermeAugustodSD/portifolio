@@ -390,6 +390,20 @@
           @media(max-width: $screen-sm){
             margin: 0;
           }
+
+          li {
+            a {
+              svg {
+                color: #FFF;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                  transform: translateY(-2px);
+                  color: $primary-color;
+                }
+              }
+            }
+          }
         }
       }
 
