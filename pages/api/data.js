@@ -2,6 +2,16 @@ export default function handler(req, res) {
   res.status(200).json({
     experience: [
       {
+        "type": "job",
+        "dateStart": "abr/2024",
+        "dateEnd": "ATUAL",
+        "institution": "Alright",
+        "role": "Desenvolvedor Full Stack Pleno",
+        "locate": "Brasília, DF",
+        "descriptionBR": "Desenvolvimento de sistema com integração ao Google Ad Manager para gerenciamento de contas filhas da Alright, além de realizar manutenção e melhorias contínuas em projetos existentes da empresa.",
+        "descriptionUS": "Development of a system with integration with Google Ad Manager for managing Alright's child accounts, in addition to carrying out maintenance and continuous improvements in the company's existing projects."
+      },
+      {
         "type": "project",
         "dateStart": "2022",
         "dateEnd": "Nov",
@@ -152,6 +162,10 @@ export default function handler(req, res) {
         }
       },
       {
+        "title": "TypeScript",
+        "size": "60"
+      },
+      {
         "title": "Javascript",
         "size": "80"
       },
@@ -164,6 +178,10 @@ export default function handler(req, res) {
         "size": "90"
       },
       {
+        "title": "Laravel",
+        "size": "60"
+      },
+      {
         "title": "WordPress",
         "size": "70"
       },
@@ -173,7 +191,7 @@ export default function handler(req, res) {
       },
       {
         "title": "SQL",
-        "size": "65"
+        "size": "75"
       },
       {
         "title": "NodeJS",
@@ -189,7 +207,7 @@ export default function handler(req, res) {
       },
       {
         "title": "Python",
-        "size": "30"
+        "size": "60"
       },
       {
         "title": "Scrum",
@@ -197,7 +215,7 @@ export default function handler(req, res) {
       },
       {
         "title": "AWS",
-        "size": "50"
+        "size": "60"
       },
       {
         "title": "Google Analytics",
@@ -206,14 +224,6 @@ export default function handler(req, res) {
       {
         "title": "SEO",
         "size": "50"
-      },
-      {
-        "title": "Adobe Illustrator",
-        "size": "45"
-      },
-      {
-        "title": "Adobe Photoshop",
-        "size": "80"
       },
       {
         "title": "Figma",
