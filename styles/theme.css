@@ -1,0 +1,33 @@
+:root {
+  --bg:           #080808;
+  --surf:         #111111;
+  --text:         #ededed;
+  --text-strong:  #ffffff;
+  --muted:        rgba(255, 255, 255, 0.45);
+  --faint:        rgba(255, 255, 255, 0.18);
+  --dim:          rgba(255, 255, 255, 0.3);
+  --border:       rgba(255, 255, 255, 0.07);
+  --accent:       #1dd7f0;
+  --nav-bg:       rgba(8, 8, 8, 0.85);
+  --green:        #22c55e;
+  --green-glow:   rgba(34, 197, 94, 0.6);
+  --dot-pattern:  radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  --dot-size:     22px 22px;
+}
+
+html[data-theme="light"] {
+  --bg:           #f5f5f5;
+  --surf:         #e8e8e8;
+  --text:         #1a1a1a;
+  --text-strong:  #000000;
+  --muted:        rgba(0, 0, 0, 0.5);
+  --faint:        rgba(0, 0, 0, 0.35);
+  --dim:          rgba(0, 0, 0, 0.45);
+  --border:       rgba(0, 0, 0, 0.09);
+  --accent:       #007fa8;
+  --nav-bg:       rgba(245, 245, 245, 0.92);
+  --green:        #16a34a;
+  --green-glow:   rgba(22, 163, 74, 0.6);
+  --dot-pattern:  radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  --dot-size:     22px 22px;
+}

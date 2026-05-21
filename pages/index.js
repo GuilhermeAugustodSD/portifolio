@@ -1,295 +1,344 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from '../styles/Home.module.scss'
-import { GitHub, Linkedin, Twitter, Instagram, MapPin, Phone, Globe, Mail, DownloadCloud } from 'react-feather'
+import { GitHub, Linkedin, Instagram, DownloadCloud, ArrowUpRight, Sun, Moon, X, ExternalLink, MessageCircle, Mail } from 'react-feather'
 import Flag from 'react-flagkit'
-import { useState, useEffect } from 'react'
-
-import HeaderSection from '../components/Header/HeaderSection'
-import Expertise from '../components/Home/Expertise/Expertise'
-import Experience from '../components/Home/Experience/Experience'
-import Skills from '../components/Home/Skills/Skills'
+import { useState, useEffect, useCallback } from 'react'
 import Projects from '../components/Home/Projects/Projects'
-import Canvas from '../components/Home/Canvas/Canvas'
 import Analytics from '../components/Analytics/Analytics'
+import useScrollAnimation from '../hooks/useScrollAnimation'
+
+const SKILL_GROUPS = [
+  { label: 'Frontend',      keys: ['HTML', 'CSS', 'Javascript', 'TypeScript', 'React', 'NextJS', 'Vue.js', 'Tailwind CSS'] },
+  { label: 'Backend & DB',  keys: ['NodeJS', 'PHP', 'Laravel', 'GraphQL', 'SQL', 'Python'] },
+  { label: 'Tools',         keys: ['Git', 'Docker', 'WordPress', 'AWS', 'GCP', 'Figma', 'Scrum', 'Google Analytics', 'SEO'] },
+]
+
+const NAV_LINKS = [
+  { id: 'about',      labelBR: 'Sobre',        labelUS: 'About'      },
+  { id: 'projects',   labelBR: 'Projetos',     labelUS: 'Projects'   },
+  { id: 'skills',     labelBR: 'Skills',       labelUS: 'Skills'     },
+  { id: 'experience', labelBR: 'Experiência',  labelUS: 'Experience' },
+  { id: 'contact',    labelBR: 'Contato',      labelUS: 'Contact'    },
+]
+
+function getAge() {
+  const birth = new Date(2000, 6, 24)
+  const today = new Date()
+  let age = today.getFullYear() - birth.getFullYear()
+  if (
+    today.getMonth() < birth.getMonth() ||
+    (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate())
+  ) age--
+  return age
+}
 
 export default function Home() {
+  const [skills,     setSkills]     = useState()
+  const [experience, setExperience] = useState()
+  const [projects,   setProjects]   = useState()
+  const [language,   setLanguage]   = useState('BR')
+  const [active,     setActive]     = useState('about')
+  const [theme,      setTheme]      = useState('dark')
+  const [github,     setGithub]     = useState(null)
 
-  const [about, setAbout] = useState();
-  const [expertise, setExpertise] = useState();
-  const [skills, setSkills] = useState();
-  const [experience, setExperience] = useState();
-  const [projects, setProjects] = useState();
-  const [language, setLanguage] = useState("BR");
-  const [titlePDF, setTitlePDF] = useState("Baixe meu currículo")
-  const [urlPDF, setUrlPDF] = useState("/pdf/cv-portugues.pdf")
-
-  useEffect(() => {
-    fetch(`/api/about`)
-      .then((response) => response.json())
-      .then((response) => {
-        setAbout(response);
-      });
-
-    fetch(`/api/data`)
-      .then((response) => response.json())
-      .then((response) => {
-        setExpertise(response.expertise);
-        setSkills(response.skills);
-        setExperience(response.experience);
-        setProjects(response.projects);
-      });
-
-
-  }, []);
-
-  function changeLanguage(lang) {
-    console.log("***", lang);
-    setLanguage(lang)
-    console.log(language);
-  }
+  useScrollAnimation()
 
   useEffect(() => {
-    if (language == "BR") {
-      setUrlPDF("/pdf/cv-portugues.pdf");
-      setTitlePDF("Baixe meu currículo");
-    } else {
-      setUrlPDF("/pdf/english-cv.pdf");
-      setTitlePDF("Download my CV");
-    }
-  }, [language])
+    fetch('/api/data').then(r => r.json()).then(d => {
+      setSkills(d.skills)
+      setExperience(d.experience)
+      setProjects(d.projects)
+    })
+    fetch('https://api.github.com/users/guilhermeaugustodsd')
+      .then(r => r.json())
+      .then(d => setGithub({ repos: d.public_repos, followers: d.followers }))
+      .catch(() => {})
+  }, [])
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
+  useEffect(() => {
+    const observers = NAV_LINKS.map(({ id }) => {
+      const el = document.getElementById(id)
+      if (!el) return null
+      const obs = new IntersectionObserver(
+        ([e]) => { if (e.isIntersecting) setActive(id) },
+        { rootMargin: '-20% 0px -65% 0px' }
+      )
+      obs.observe(el)
+      return obs
+    })
+    return () => observers.forEach(o => o?.disconnect())
+  }, [])
+
+  const toggleTheme = useCallback(() => {
+    setTheme(t => t === 'dark' ? 'light' : 'dark')
+  }, [])
+
+  const jobs = experience?.filter(e => e.type !== 'project' && e.type !== 'study') ?? []
+  const edu  = experience?.filter(e => e.type === 'study') ?? []
 
   return (
-    <div className={styles.container}>
+    <div className={styles.page}>
       <Head>
-        <title>Guilherme Dantas - Desenvolvedor web, Frontend</title>
+        <title>Guilherme Dantas — Full Stack Developer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Currículum Vitae" />
-        <meta name="keywords" content="desenvolvedor web, frontend, currículo, brasília, df" />
-        <meta name="author" content="Guilherme Dantas" />
+        <meta name="description" content="Full Stack Developer Portfolio — React, NextJS, Node" />
         <link rel="icon" href="/favicon.ico" />
-
-        <meta property="fb:app_id" content="1306835976749394" />
-        <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://www.gdantasit.com" />
-        <meta property="og:title" content="Guilherme Dantas - Desenvolvedor web, Frontend" />
-        <meta property="og:site_name" content="Dantas IT" />
-        <meta property="og:description" content="Currículum Vitae" />
+        <meta property="og:title" content="Guilherme Dantas — Full Stack Developer" />
         <meta property="og:image" content="https://gdantasit.com/images/share.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:type" content="website" />
         <Analytics id="1" trakingID="G-EZ5X0QJCE0" />
       </Head>
 
-      <header className={styles.header}>
+      {/* ── NAV ── */}
+      <nav className={styles.nav}>
+        <div className={styles.navInner}>
+          <a href="#about" className={styles.brand}>GD.</a>
 
-        <div className={`${styles.col} ${styles.col1}`}>
-          <picture>
-            <Image src="/images/avatar.jpeg" alt="Foto Guilherme" width={540} height={400} />
-          </picture>
+          <ul className={styles.navLinks}>
+            {NAV_LINKS.map(({ id, labelBR, labelUS }) => (
+              <li key={id}>
+                <a href={`#${id}`} className={active === id ? styles.navOn : ''}>
+                  {language === 'BR' ? labelBR : labelUS}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className={styles.navActions}>
+            <div className={styles.lang}>
+              <button onClick={() => setLanguage('BR')} className={language === 'BR' ? styles.langOn : ''}>
+                <Flag country="BR" />
+              </button>
+              <button onClick={() => setLanguage('US')} className={language === 'US' ? styles.langOn : ''}>
+                <Flag country="GB" />
+              </button>
+            </div>
+            <button onClick={toggleTheme} className={styles.themeBtn} aria-label="Toggle theme">
+              {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+            </button>
+            <a href={`/api/generate-cv?lang=${language}`} download className={styles.cvBtn}>
+              <DownloadCloud size={14} />
+              <span>CV</span>
+            </a>
+          </div>
         </div>
+      </nav>
 
-        <div className={`${styles.contentText} ${styles.col}`}>
-
-          <div className={styles.contentHeader}>
-            <div>
-              <div>
-                <Flag country="BR" onClick={() => changeLanguage('BR')} />
-              </div>
-              <div>
-                <Flag country="GB" onClick={() => changeLanguage('US')} />
-              </div>
+      {/* ── HERO ── */}
+      <section className={styles.hero}>
+        <div className={`${styles.heroInner} fade-up`}>
+          <div className={styles.heroTop}>
+            <picture className={styles.avatar}>
+              <Image src="/images/avatar.jpeg" alt="Guilherme" width={56} height={56} />
+            </picture>
+            <div className={styles.heroBadge}>
+              <span className={styles.dot} />
+              {language === 'BR' ? 'Disponível para projetos' : 'Available for projects'}
             </div>
           </div>
 
-          <div className={styles.contentBody}>
-            {/* <h1>Guilherme Dantas</h1> */}
-            <Canvas />
+          <h1 className={styles.heroName}>Guilherme Dantas</h1>
+          <p className={styles.heroSub}>
+            Full Stack Developer &nbsp;·&nbsp; Brasília, DF
+          </p>
 
-            {(language == 'US') && (
-              <h2>Full Stack Developer</h2>
+          <p className={styles.heroBio}>
+            {language === 'BR'
+              ? 'Desenvolvedor Full Stack com mais de 5 anos de experiência construindo produtos web de alta performance. Especializado em React, NextJS e ecossistema JavaScript.'
+              : 'Full Stack Developer with 5+ years of experience building high-performance web products. Specialized in React, NextJS and the JavaScript ecosystem.'
+            }
+          </p>
+
+          <div className={styles.heroStats}>
+            <div className={styles.stat}>
+              <strong>5+</strong>
+              <span>{language === 'BR' ? 'anos de exp.' : 'years exp.'}</span>
+            </div>
+            <div className={styles.statDiv} />
+            <div className={styles.stat}>
+              <strong>{projects?.length ?? '9'}</strong>
+              <span>{language === 'BR' ? 'projetos' : 'projects'}</span>
+            </div>
+            <div className={styles.statDiv} />
+            <div className={styles.stat}>
+              <strong>4+</strong>
+              <span>{language === 'BR' ? 'empresas' : 'companies'}</span>
+            </div>
+            {github && (
+              <>
+                <div className={styles.statDiv} />
+                <div className={styles.stat}>
+                  <strong>{github.repos}</strong>
+                  <span>repos</span>
+                </div>
+              </>
             )}
-
-            {(language == 'BR') && (
-              <h2>Desenvolvedor<span> Full Stack </span></h2>
-            )}
-
-            {/* I am a WordPress Developer at heart and create features that are best suited for the job at hand. */}
-            <ul className={styles.social}>
-              <li><a href="https://github.com/guilhermeaugustodsd/" title="Github"><GitHub size={24} /></a></li>
-              <li><a href="https://www.linkedin.com/in/guilhermedanta-s/" title="Linkedin"><Linkedin size={24} /></a></li>
-              <li><a href="https://www.instagram.com/guilherme.asdantas/" title="Instagram"><Instagram size={24} /></a></li>
-              <li><a href={urlPDF} title={titlePDF} ><DownloadCloud size={24} /></a></li>
-            </ul>
           </div>
 
-          <div className={styles.contentFooter}>
-            <hr />
-            <ul className={styles.perosnalContact}>
-              {/* <li className={styles.local}>
-                <div>
-                  <MapPin size={16} />
-                  {(language == "BR") && (
-                    <small>Local</small>
-                  )}
-
-                  {(language == "US") && (
-                    <small>Local</small>
-                  )}
-                </div>
-                <div>Brasília, DF</div>
-              </li> */}
-              <li className={styles.whatsapp}>
-                <div>
-                  <Phone size={16} />
-                  <small>Phone</small>
-                </div>
-                <div>
-                  <Link href="tel:+5561982625630">(61) 98262-5630</Link>
-                </div>
-              </li>
-              <li className={styles.email}>
-                <div>
-                  <Globe size={16} />
-                  <small>Web</small>
-                </div>
-                <div>
-                  <Link href="https://www.gdantasit.com">gdantasit.com</Link>
-                </div>
-              </li>
-              <li className={styles.email}>
-                <div>
-                  <Mail size={16} />
-                  <small>E-mail</small>
-                </div>
-                <div>
-                  <Link href="mailto:guilhermednts2@gmail.com">guilhermednts2@gmail.com</Link>
-                </div>
-              </li>
-            </ul>
-
+          <div className={styles.heroSocials}>
+            <a href="https://github.com/guilhermeaugustodsd/" target="_blank" rel="noopener noreferrer">
+              <GitHub size={18} />
+            </a>
+            <a href="https://www.linkedin.com/in/guilhermedanta-s/" target="_blank" rel="noopener noreferrer">
+              <Linkedin size={18} />
+            </a>
+            <a href="https://www.instagram.com/guilherme.asdantas/" target="_blank" rel="noopener noreferrer">
+              <Instagram size={18} />
+            </a>
           </div>
-
         </div>
+      </section>
 
-      </header>
+      {/* ── ABOUT ── */}
+      <section id="about" className={styles.section}>
+        <div className={`${styles.inner} fade-up`}>
+          <span className={styles.label}>{language === 'BR' ? 'SOBRE' : 'ABOUT'}</span>
+          <div className={styles.aboutGrid}>
+            <h2>{language === 'BR' ? 'Desenvolvedor apaixonado por tecnologia e produto.' : 'Developer passionate about technology and product.'}</h2>
+            <div className={styles.aboutText}>
+              {language === 'BR' ? (
+                <>
+                  <p>Sou Guilherme Dantas, {getAge()} anos, resido em Brasília, DF. Bacharel em Ciência da Computação pelo UniCEUB e pós-graduado em Engenharia de Software pela FAVENI.</p>
+                  <p>Atualmente na <strong>Offshore2go</strong> e no grupo <strong>Diários Associados</strong>. Tenho experiência em portais de notícias, plataformas SaaS e sistemas com integrações complexas. Busco oportunidades no exterior e tenho inglês intermediário.</p>
+                </>
+              ) : (
+                <>
+                  <p>I&apos;m Guilherme Dantas, {getAge()} years old, living in Brasília, Brazil. Computer Science graduate from UniCEUB with a postgraduate degree in Software Engineering from FAVENI.</p>
+                  <p>Currently at <strong>Offshore2go</strong> and <strong>Diários Associados</strong> group. Experience in news portals, SaaS platforms and systems with complex integrations. Seeking international opportunities — intermediate English.</p>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <main className={styles.main}>
-        <section>
-          <header className={styles.col}>
-            <h3>Intro</h3>
-            {(language == 'US') && (
-              <small>My <strong>profile</strong></small>
-            )}
+      {/* ── PROJECTS ── */}
+      <section id="projects" className={styles.section}>
+        <div className={`${styles.inner} fade-up`}>
+          <span className={styles.label}>{language === 'BR' ? 'PROJETOS' : 'PROJECTS'}</span>
+          <h2>{language === 'BR' ? 'Trabalhos recentes' : 'Recent work'}</h2>
+          <Projects data={projects} language={language} styles={styles} />
+        </div>
+      </section>
 
-            {(language == 'BR') && (
-              <small>Um pouco sobre meu <strong>perfil</strong></small>
-            )}
-          </header>
-          <main className={styles.col}>
-            {(language == "US") && (
-              <>
-                <p className={styles.firstParagraph}>Hello and welcome!</p>
-                <p>
-                  I am Guilherme Dantas, a {about?.age}-year-old technology enthusiast, thirsty for innovation and residing in Brasília-DF. As a software developer leading Dantas IT, my journey in the world of technology began {about?.workingTime} years ago. I graduated in Computer Science from the University Center of Brasília.
-                </p>
-                <p>My profile is marked by a combination of technical skills and personal traits that drive my professional growth. I am naturally communicative, responsible, and committed to everything I set out to do. I see each challenge as an opportunity for learning and growth, constantly seeking to improve myself and adapt to new market trends.
-                </p>
+      {/* ── SKILLS ── */}
+      <section id="skills" className={styles.section}>
+        <div className={`${styles.inner} fade-up`}>
+          <span className={styles.label}>SKILLS</span>
+          <h2>{language === 'BR' ? 'Stack & ferramentas' : 'Stack & tools'}</h2>
+          <div className={styles.skillGroups}>
+            {SKILL_GROUPS.map(group => (
+              <div key={group.label} className={styles.skillGroup}>
+                <h4>{group.label}</h4>
+                <div className={styles.pills}>
+                  {skills
+                    ?.filter(s => group.keys.includes(s.title))
+                    .sort((a, b) => b.size - a.size)
+                    .map(s => (
+                      <span key={s.title} className={styles.pill}>{s.title}</span>
+                    ))
+                  }
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <p>
-                  My passionate interest in new technologies and market trends not only shapes my work but also drives me to explore new horizons and blaze new digital trails.
-                </p>
-              
-              </>
-            )}
+      {/* ── EXPERIENCE ── */}
+      <section id="experience" className={styles.section}>
+        <div className={`${styles.inner} fade-up`}>
+          <span className={styles.label}>{language === 'BR' ? 'EXPERIÊNCIA' : 'EXPERIENCE'}</span>
+          <h2>{language === 'BR' ? 'Trajetória profissional' : 'Professional journey'}</h2>
+          <div className={styles.expList}>
+            {jobs.map((e, i) => (
+              <div key={i} className={styles.expRow}>
+                <div className={styles.expMeta}>
+                  <span className={styles.expPeriod}>{e.dateStart} — {e.dateEnd}</span>
+                  <span className={styles.expType}>{e.type}</span>
+                </div>
+                <div className={styles.expBody}>
+                  <strong>{e.institution}</strong>
+                  <span>{e.role}</span>
+                  {e.link ? (
+                    <a href={e.link} target="_blank" rel="noopener noreferrer" className={styles.expLink}>
+                      {language === 'BR' ? 'Ver projeto' : 'View project'} <ArrowUpRight size={12} />
+                    </a>
+                  ) : null}
+                  <p>{language === 'BR' ? e.descriptionBR : e.descriptionUS}</p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-            {(language == "BR") && (
-              <>
-                <p className={styles.firstParagraph}>Olá e bem-vindo!</p>
-                <p>
-                  Sou Guilherme Dantas, um entusiasta da tecnologia de {about?.age} anos, com sede de inovação e residente em Brasília-DF. Como desenvolvedor de software à frente da Dantas IT, minha jornada no mundo da tecnologia começou há {about?.workingTime} anos. Graduado em Ciência da Computação pelo Centro Universitário de Brasília.
-                </p>
-                <p>Meu perfil é marcado por uma combinação de habilidades técnicas e traços pessoais que impulsionam meu crescimento profissional. Sou comunicativo por natureza, responsável e engajado em tudo o que me proponho a fazer. Encaro cada desafio como uma oportunidade de aprendizado e crescimento, buscando constantemente me aprimorar e me adaptar às novas tendências do mercado.
-                </p>
+          {edu.length > 0 && (
+            <>
+              <h2 style={{ marginTop: '64px' }}>{language === 'BR' ? 'Formação' : 'Education'}</h2>
+              <div className={styles.expList}>
+                {edu.map((e, i) => (
+                  <div key={i} className={styles.expRow}>
+                    <div className={styles.expMeta}>
+                      <span className={styles.expPeriod}>{e.dateStart} — {e.dateEnd}</span>
+                    </div>
+                    <div className={styles.expBody}>
+                      <strong>{e.institution}</strong>
+                      <span>{e.role}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </section>
 
-                <p>
-                  Meu interesse apaixonado por novas tecnologias e tendências de mercado não apenas molda meu trabalho, mas também me impulsiona a explorar novos horizontes e desbravar novos territórios digitais.
-                </p>
-              </>
-            )}
+      {/* ── CONTACT ── */}
+      <section id="contact" className={styles.section}>
+        <div className={`${styles.inner} fade-up`}>
+          <span className={styles.label}>{language === 'BR' ? 'CONTATO' : 'CONTACT'}</span>
+          <h2>{language === 'BR' ? 'Vamos conversar.' : "Let's talk."}</h2>
+          <p className={styles.contactLead}>
+            {language === 'BR'
+              ? 'Aberto a projetos freelance, oportunidades remotas e colaborações. Me manda uma mensagem.'
+              : 'Open to freelance projects, remote opportunities and collaborations. Send me a message.'}
+          </p>
+          <div className={styles.contactLinks}>
+            <a href="mailto:guilhermednts2@gmail.com" className={styles.contactMain}>
+              guilhermednts2@gmail.com
+            </a>
+            <div className={styles.contactSide}>
+              <a href="https://wa.me/5561982625630" target="_blank" rel="noopener noreferrer">
+                <MessageCircle size={14} />
+                WhatsApp
+              </a>
+              <a href="https://www.linkedin.com/in/guilhermedanta-s/" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={14} />
+                LinkedIn
+              </a>
+              <a href="https://github.com/guilhermeaugustodsd/" target="_blank" rel="noopener noreferrer">
+                <GitHub size={14} />
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          </main>
-        </section>
-
-        <section id="expertise">
-          <HeaderSection
-            title="Expertise"
-            desc={language == "BR" ? "Ainda faltam muitas linhas de código" : ""}
-            classTemplate={`${styles.col}`}
-            classSticky={`${styles.sticky}`}
-          />
-
-          <Expertise
-            classTemplate={`${styles.col}`}
-            data={expertise}
-            language={language}
-          />{console.log(expertise)}
-
-        </section>
-
-        <section id="skills">
-          <HeaderSection
-            title={language == "BR" ? "Habilidades" : "Skills"}
-            desc={language == "BR" ? "Linguagens, ferramentas e soluções" : "Languages, tools and solutions"}
-            classTemplate={`${styles.col}`}
-            classSticky={`${styles.sticky}`}
-          />
-
-          <Skills
-            classTemplate={`${styles.col}`}
-            data={skills}
-          />
-        </section>
-
-        <section id="expirience">
-          <HeaderSection
-            title={language == "BR" ? "Experiência e Formação" : "Professional Experience and Education"}
-            desc={language == "BR" ? "Clique nas experiências para ver mais" : "Click on experince's name to see more"}
-            classTemplate={`${styles.col}`}
-            classSticky={`${styles.sticky}`}
-          />
-
-          <Experience
-            classTemplate={`${styles.col}`}
-            data={experience}
-            language={language}
-          />
-        </section>
-
-        <section id="projects">
-          <HeaderSection
-            title={language == "BR" ? "Projetos" : "Projects"}
-            desc={language == "BR" ? "Clique nos projetos para acessar o site" : "Click on the projects to access the website"}
-            classTemplate={`${styles.col}`}
-            classSticky={`${styles.sticky}`}
-
-          />
-
-          <Projects
-            classTemplate={`${styles.col}`}
-            data={projects}
-            language={language}
-          />
-        </section>
-
-      </main>
-
+      {/* ── FOOTER ── */}
       <footer className={styles.footer}>
-
+        <div className={styles.footerInner}>
+          <p>Guilherme Dantas · {new Date().getFullYear()}</p>
+          <div className={styles.footSocials}>
+            <a href="https://github.com/guilhermeaugustodsd/" target="_blank" rel="noopener noreferrer"><GitHub size={16} /></a>
+            <a href="https://www.linkedin.com/in/guilhermedanta-s/" target="_blank" rel="noopener noreferrer"><Linkedin size={16} /></a>
+            <a href="mailto:guilhermednts2@gmail.com"><span>guilhermednts2@gmail.com</span></a>
+          </div>
+        </div>
       </footer>
     </div>
   )

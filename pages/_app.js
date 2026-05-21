@@ -1,4 +1,6 @@
 import '../styles/_reset.css'
+import '../styles/theme.css'
+import '../styles/animations.css'
 
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
